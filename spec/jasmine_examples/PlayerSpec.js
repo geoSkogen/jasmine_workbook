@@ -11,10 +11,10 @@ describe("Player", function() {
 
   beforeEach(function() {
     playlistStrings = [
-      ["title","artist","album","year","label"],
-      ["title1","artist1","album1","year1","label1"],
-      ["title2","artist2","album2","year2","label2"],
-      ["title3","artist3","album3","year3","label3"]
+      ["title","artist","album","year","label", 1],
+      ["title1","artist1","album1","year1","label1", 1],
+      ["title2","artist2","album2","year2","label2", 1],
+      ["title3","artist3","album3","year3","label3", 1]
     ];
     for (var i = 0; i < playlistStrings.length; i++) {
       playlistData[i] = new Song(playlistStrings[i]);
@@ -34,10 +34,12 @@ describe("Player", function() {
   });
 
   it("should be able to play a Playlist of Songs", function() {
-    player.playlist(playlist);
-    for (var i = 0; i < playlist.length; i++) {
-      expect(player.currentlyPlayingSong).toEqual(playlist[i]);
+    player.initPlaylist(playlist);
+
+    for (var i = 0; i < playlistStrings.length; i++) {
+      expect(player.)
     }
+
   })
 
   describe("when song has been paused", function() {
